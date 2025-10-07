@@ -1,0 +1,31 @@
+**Objective:** Analyze the provided CVE details and repository context to suggest an initial fix strategy for the identified software vulnerability. Do NOT attempt to implement the fix, but rather provide a clear, technical suggestion.
+
+**Contextual Data:**
+1.  **CVE Information:** [INSERT FULL CVE-ID, DESCRIPTION, SEVERITY, AFFECTED VERSIONS, and any specific EXPLOIT DETAILS HERE]
+2.  **Repository Context:** [INSERT RELEVANT FILE PATHS, CODE SNIPPETS, OR A SUMMARY OF THE VULNERABLE FUNCTION/MODULE AND ITS DEPENDENCIES HERE. *Crucially, include the full content of the file(s) identified as vulnerable.*]
+3.  **Programming Language & Framework:** [SPECIFY LANGUAGE(S) and FRAMEWORK(S) (e.g., Python/Django, JavaScript/Node.js, C/Linux Kernel).]
+
+**Task Instructions for the AI Agent:**
+
+1.  **Vulnerability Analysis:**
+    * Identify the exact lines of code and function(s) in the provided context that are responsible for the vulnerability.
+    * Explain the root cause of the vulnerability (e.g., improper input validation, insecure deserialization, race condition, lack of proper authentication).
+2.  **Initial Fix Suggestion (Phase 1):**
+    * Propose a specific, high-level technical modification or addition that would mitigate the vulnerability. This is the first suggestion.
+    * Explain the mechanism by which this suggestion addresses the root cause.
+    * **Iteration Check:** If the suggestion is vague, incomplete, or potentially introduces a new issue (e.g., performance degradation, breaking existing functionality), treat this as an unsuccessful iteration.
+3.  **Refined Fix Suggestion (Phase 2 - Iteration):**
+    * If the first suggestion was inadequate (as per the iteration check), refine or replace the proposal with a more robust and specific alternative.
+    * Detail the improvements over the initial suggestion.
+    * Continue iterating (Phase 3, 4, etc.) until a suggestion is found that is technically sound and directly addresses the CVE description using the provided code context.
+4.  **Final Output Requirements:**
+    * Present the **Final Confident Fix Suggestion** clearly.
+    * Provide a brief **Rationale** for why this suggestion is the most effective approach.
+    * **Complexity Assessment:** State clearly whether the fix is likely **Easy**, **Moderate**, or **Complex** to implement.
+        * **Easy:** Simple, localized change (e.g., adding a single input validation check).
+        * **Moderate:** Requires changes across multiple files or modules, or involves using a new library/security feature.
+        * **Complex:** Requires a significant architectural change, database schema migration, or impacts core functionality/performance, demanding extensive testing.
+    * **Mention the User:** Include a concluding statement addressed to the user, summarizing the complexity: "Based on the analysis, I believe this vulnerability will be [Easy/Moderate/Complex] to fix."
+
+**Constraint:** The suggestion must be technically feasible within the constraints of the provided repository context and specified language/framework.
+
